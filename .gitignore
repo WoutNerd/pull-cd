@@ -1,0 +1,7 @@
+**/**.env
+stacks
+bin
+include
+lib
+lib64
+pyvenv.cfg

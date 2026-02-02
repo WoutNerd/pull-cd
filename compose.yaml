@@ -1,0 +1,11 @@
+services:
+  deployer:
+    build: .
+    container_name: deployer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./stacks:/stacks
+      - ./secrets:/secrets:ro
+    env_file:
+      - .env
+    restart: unless-stopped
