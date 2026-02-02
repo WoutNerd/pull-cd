@@ -58,6 +58,17 @@ If no secrets file exists, the stack is deployed without a ```.env```.
 |```COMPOSE_DIR```|not set (root)|Subdirectory to use under ```/stacks```, so by default it assumes that all compose files are under here|
 |```FORCE_DEPLOY_ALL```|```False```|Redeploy all stacks, even when just one changes|
 |```LOG_LEVEL```|```INFO```|Logging level|
+|```NOTIFY_GOTIFY```|```false```|Enables/disables notifications via gotify|
+|```GOTIFY_URL```|not set||
+|```GOTIFY_TOKEN```|not set||
+|```GOTIFY_LEVEL```|not set|Log level that needs to be pushed|
+|```NOTIFY_DISCORD```|```false```|Enables/disables notifications via discord|
+|```DISCORD_WEBHOOK```|not set||
+|```DISCORD_LEVEL```|not set|Log level that needs to be pushed|
+|```NOTIFY_NTFY```|```false```|Enables/disables notifications via ntfy|
+|```NTFY_TOPIC```|not set||
+|```NTFY_LEVEL```|not set|Log level that needs to be pushed|
+
 
 ## Running with Docker
 
@@ -94,3 +105,6 @@ services:
 - If ```FORCE_DEPLOY_ALL!=False```:
   - Deploys all stacks
 
+## Notifications
+
+Currently notications are the same as logs. For every notification channel the desired log level can be set independently. 

@@ -14,6 +14,7 @@ from git import (
 )
 from stacks import find_stacks, get_changed_stacks
 from deploy import deploy_stack
+from config import setup_logging, setup_notifications
 
 
 def deploy_all_stacks(stacks_root: Path, branch: str):
@@ -50,6 +51,7 @@ def deploy_changed_stacks(branch, stacks_root: Path):
 
 def main():
     setup_logging()
+    setup_notifications()
     config = load_config()
 
     if not config["repo"]:

@@ -5,7 +5,7 @@ RUN apk add --no-cache \
     openssh \
     docker-cli \
     docker-cli-compose \
-    bash
+    ca-certificates
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
