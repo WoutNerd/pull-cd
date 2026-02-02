@@ -4,15 +4,17 @@ RUN apk add --no-cache \
     git \
     openssh \
     docker-cli \
-    docker-cli-compose
+    docker-cli-compose \
+    bash
 
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
 
 WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY agent.py .
+COPY . .
 
-CMD ["python", "agent.py"]
+CMD ["python", "-m", "main"]
