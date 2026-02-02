@@ -94,5 +94,3 @@ services:
 - If ```FORCE_DEPLOY_ALL!=False```:
   - Deploys all stacks
 
-## Logging
-
